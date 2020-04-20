@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="applicable-device" content="mobile">
+	<meta name="keywords" content="网盘搜索,微信公众号自动接口" />
+	<meta name="description" content="微信公众号自动回复网盘搜索接口" />
+	<title>微信公众号自动回复接口-掌中追剧手机版</title>
+    <link href="css/m_global.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/m_global.js"></script>
+</head>
+<body>
+<header class="header header-fixed clearfix" >
+    <div class="row clearfix" >
+        <div class="fl nav" style="position: relative;z-index: 99;">
+            <a href="/" ><span class="icon icon-back"></span></a>
+            <span class="tt">接口合作</span>
+        </div>
+        <div class="fr nav nav-more">
+            <ul class="list-more">
+                <li></li>
+                <li><a href="javascript:void(0);" id="nav" ><span class="icon icon-nav"></span></a></li>
+            </ul>
+		</div>		
+    </div>
+	<div id="list-nav" class="hide" >
+	    <ul class="list-nav">
+	    	<li><a href="/" class="link"><span>首页</span></a></li>
+	    	<li><a href="/so" class="link"><span>网盘搜索</span></a></li>
+	    	<li><a href="/file/share_form/" class="link"><span>一键分享</span></a></li>
+	    </ul>
+	</div>
+	<div class="hide-mask panel-mask" id="nav_mask"></div>
+	<script type="text/javascript" > 
+		var nav_mask = $("#nav_mask");
+		$('.header #nav').bind('click', function() {
+			if( $('#list-nav').css("display") == "none" ){
+				$('#list-nav').show();
+				nav_mask.show();
+			}else{
+				$('#list-nav').hide();
+				nav_mask.hide();
+			}   
+		});
+		nav_mask.click(function(e) {
+			nav_mask.hide();
+			$('#list-nav').hide();
+		})
+	</script></header>
+<div class="search_list clearfix" >
+	<div class="snav" style="background-color:#FFF;font-size:16px;" >
+		<p>&nbsp; &nbsp; &nbsp; &nbsp;本站资源采集网络各大媒体平台，更新速度快且不带任何引流效果。如果你是在运营微信公众号,为用户提供找资源服务. 可免费接入本站资源搜索功能，为你的用户提供海量资源搜索服务，</p>
+		<div class="api_img" style="margin-top:15px;padding-bottom:15px;border-bottom: 1px solid #e5e9eb;">
+			<h2>配置截图演示</h2>
+			<div>
+				<div class="tl" >1、登录微信公众平台</div>
+				<div class="im" ><img src="images/api1.png" /></div>
+			</div>
+			<div>
+				<div class="tl" >2、点击 [ 开发 > 基本配置 ]</div>
+				<div class="im" ><img src="images/api2.png" /></div>
+			</div>
+			<div>
+				<div class="tl" >3、点击 [ 修改配置 ]</div>
+				<div class="im" ><img src="images/api3.png" /></div>
+			</div>
+			<div>
+				<div class="tl">4、填写表单</div>
+				<div style="padding-left:15px; padding-top:5px;font-size:14px;">
+					URL填写： <font style="color:red;" >http://tb361.xyz/api.php/wechat</font><br />
+					Token：s123456789<br />
+					EncodingAESKey：随机生成<br />
+					消息加解密方式：明文模式<br />
+				</div>
+				<div class="im" ><img src="images/api4.png" /></div>
+			</div>
+			<div>
+				<div class="tl" >5、保存修改(配置未启用,请启用),5分钟左右配置生效。</div>
+				<div class="im" ><img src="images/api5.png" /></div>
+			</div>
+			<div style="color:#3CA0EC;margin:15px auto;" >
+				注意：个人订阅号启用接口后, 原设置菜单会被取消, 需要使用微信第三方平台添加, 比如：搜狐快站、微讯云端，具体请看下面操作，若不需要菜单可跃过。
+			</div>
+			<div>
+				<a href="/" ><div class="tl" >------------</div></a>
+			</div>
+		</div>
+		
+		<div class="api_img" style="margin-top:15px;">
+			<h2>自动回复与自定义菜单同时存在<br />搜狐快站操作演示：</h2>
+			<div>
+				<div class="tl" >1、打开搜狐快站<br />网址：https://www.kuaizhan.com<br />没有账号，创建一个，有账号，直接登录</div>
+				<div class="im" ><img src="images/kz01.jpg" /></div>
+			</div>
+			<div>
+				<div class="tl" >2、登录之后，首先需要创建站点，步骤如下：</div>
+				<div class="im" >
+					<p>a、点击新建站点(老用户页面不一样)</p>
+					<p><img src="images/kz02.jpg" /></p>
+					<p>b、选择你需要的模板(可随意)</p>
+					<p><img src="images/kz03.jpg" /></p>
+					<p>c、选择模板后点击右上方发布页面</p>
+					<p><img src="images/kz04.jpg" /></p>
+					<p><img src="images/kz05.jpg" /></p>
+					<p>d、填写站点发布信息(可随意)</p>
+					<p><img src="images/kz06.jpg" /></p>
+					<p>e、站点发布成功<p>
+					<p><img src="images/kz07.jpg" /></p>
+				</div>
+			</div>
+			<div>
+				<div class="tl" >3、站点发布成功后，绑定公众号并设置菜单</div>
+				<div class="im" >
+					<p>a、点击公众号功能按钮</p>
+					<p><img src="images/kz08.jpg" /></p>
+					<p>b、绑定好公众号后可进入菜单管理</p>
+					<p><img src="images/kz09.jpg" /></p>
+				</div>
+			</div>
+			<div style="color:#3CA0EC;margin:15px auto;" >
+				注意：自定义菜单需要跳转图文，先在搜狐快站的“图文消息编辑器”编辑【搜狐快站的“图文消息编辑器”【新建】的文章，跟公众号后台是同步的，不习惯的话，先新建一个图文，也可在公众号后台编辑】，再在自定义菜单功能里设置菜单即可。
+			</div>
+			<div>
+				<a href="/" ><div class="tl" >------------</div></a>
+			</div>
+		</div
+	
+	</div>
+</div>
+<div class="footer">
+	<p>邮箱：stx8991#gmail.com<br />
+	</p>
+	<dl>&copy;yemu.sinaapp.com</dl>
+	<p>&nbsp;</p>
+</div>
+<div style="display:none;">
+</div>
+</body>
+</html>
